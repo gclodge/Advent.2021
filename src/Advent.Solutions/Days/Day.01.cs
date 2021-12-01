@@ -53,20 +53,6 @@ namespace Advent.Solutions.Days
                 }
             }
             return res;
-
-            //for (int i = 0; i < count; i++)
-            //{
-            //    int sum = 0;
-            //    for (int j = i; j < windowSize; j++)
-            //    {
-            //        if (j < count)
-            //        {
-            //            sum += vals.ElementAt(j);
-            //        }
-            //    }
-            //    res.Add(sum);
-            //}
-            //return res;
         }
     }
 }
