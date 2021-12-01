@@ -17,8 +17,8 @@ namespace Advent.Tests
         {
             string[] hypotheticals = new[]
             {
-                Path.Combine(Path.GetDirectoryName(Self.Location), "..", "..", ".."),
-                Path.Combine(Path.GetDirectoryName(Self.Location), "..", "..", "..", "..")
+                Path.Combine(Path.GetDirectoryName(Self.Location), "..", "..", "..", "..", ".."),
+                Path.Combine(Path.GetDirectoryName(Self.Location), "..", "..", "..", "..", "..", "..")
             };
 
             if (relativePath != null)

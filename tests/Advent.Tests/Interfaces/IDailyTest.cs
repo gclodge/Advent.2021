@@ -6,6 +6,8 @@ namespace Advent.Tests.Interfaces
     {
         int Number { get; }
 
+        string Input { get; }
+
         [Fact]
         void PartOne();
 

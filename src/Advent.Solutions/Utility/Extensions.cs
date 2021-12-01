@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace Advent.Solutions.Utility
 {
-    internal static class File
+    public static class Extensions
     {
-        public static IEnumerable<string> Parse(string file)
+        public static IEnumerable<string> Parse(this string file)
         {
             var res = new List<string>();
             using (var sr = new StreamReader(file))
@@ -22,7 +22,7 @@ namespace Advent.Solutions.Utility
             return res;
         }
 
-        public static IEnumerable<T> Parse<T>(string file, Func<string, T> deserialize)
+        public static IEnumerable<T> Parse<T>(this string file, Func<string, T> deserialize)
         {
             return Parse(file).Select(x => deserialize(x));
         }
