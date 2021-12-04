@@ -116,7 +116,7 @@ namespace Advent.Solutions.Days
                 binaryIndex = (str.Length - 1) - i;
                 if (str[i] == '1')
                 {
-                    res += (int)Math.Pow(2, binaryIndex);
+                    res += (1 << binaryIndex); //< Calculate power of two
                 }
             }
             return res;
