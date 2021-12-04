@@ -20,7 +20,7 @@ namespace Advent.Tests.DailyTests
         public string Input => TestHelper.GetInputFile(this);
 
         [Fact]
-        public void Test_KnownCommands()
+        public void Test_KnownDiagnostics()
         {
             var nums = new string[]
             {
