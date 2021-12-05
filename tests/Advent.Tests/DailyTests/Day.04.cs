@@ -21,7 +21,7 @@ namespace Advent.Tests.DailyTests
         public string Test => TestHelper.GetTestFile(this);
 
         [Fact]
-        public void Test_KnownCommands()
+        public void Test_KnownInputs()
         {
             var bingo = new Bingo(Test.Parse());
             bingo.Play();
