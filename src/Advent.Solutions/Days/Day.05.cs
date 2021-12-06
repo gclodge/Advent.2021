@@ -7,7 +7,7 @@
     {
         IEnumerable<Vent> Vents { get; }
 
-        Dictionary<VentPosition, int> CoverageMap;
+        Dictionary<VentPosition, int> CoverageMap { get; }
 
         public VentMap(IEnumerable<string> lines)
         {
