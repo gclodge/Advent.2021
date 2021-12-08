@@ -13,9 +13,9 @@ using Advent.Solutions.Days;
 
 namespace Advent.Tests.DailyTests
 {
-    public class Day06 : Interfaces.IDailyTest
+    public class Day07 : Interfaces.IDailyTest
     {
-        public int Number => 6;
+        public int Number => 7;
 
         public string Input => TestHelper.GetInputFile(this);
         public string Test => TestHelper.GetTestFile(this);
@@ -23,38 +23,41 @@ namespace Advent.Tests.DailyTests
         [Fact]
         public void Test_KnownInputs()
         {
-            var vals = new int[] { 3, 4, 3, 1, 2 };
-            var school = new LanternFishSchool(vals);
+            var crabs = new int[] { 16, 1, 2, 0, 4, 2, 7, 1, 2, 14 };
+            var aligner = new CrabAligner(crabs);
 
-            school.SimulateDays(80);
-            ulong expectedEnd = 5934;
-            Assert.Equal(expectedEnd, school.Count);
+            int cost = aligner.GetCheapestAlignment();
+            int gaussCost = aligner.GetCheapestAlignment(isGauss: true);
 
-            school.SimulateDays(256 - 80);
-            ulong expectedBigg = 26984457539;
-            Assert.Equal(expectedBigg, school.Count);
+            int expectedCost = 37;
+            int expectedGaussCost = 168;
+
+            Assert.Equal(expectedCost, cost);
+            Assert.Equal(expectedGaussCost, gaussCost);
         }
 
         [Fact]
         public void PartOne()
         {
-            var inputs = Input.Parse().Single().Split(',').Select(int.Parse);
-            var school = new LanternFishSchool(inputs);
-            school.SimulateDays(80);
+            var crabs = Input.Parse().Single().Split(',').Select(int.Parse);
+            var aligner = new CrabAligner(crabs);
 
-            ulong expectedCount = 389726;
-            Assert.Equal(expectedCount, school.Count);
+            int cost = aligner.GetCheapestAlignment();
+            int expectedCost = 337488;
+
+            Assert.Equal(expectedCost, cost);
         }
 
         [Fact]
         public void PartTwo()
         {
-            var inputs = Input.Parse().Single().Split(',').Select(int.Parse);
-            var school = new LanternFishSchool(inputs);
-            school.SimulateDays(256);
+            var crabs = Input.Parse().Single().Split(',').Select(int.Parse);
+            var aligner = new CrabAligner(crabs);
 
-            ulong expectedCount = 1743335992042;
-            Assert.Equal(expectedCount, school.Count);
+            int cost = aligner.GetCheapestAlignment(isGauss: true);
+            int expectedCost = 89647695;
+
+            Assert.Equal(expectedCost, cost);
         }
     }
 }
